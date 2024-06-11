@@ -57,29 +57,7 @@ namespace WiW
 			
 		}
 
-		// Consulta1: Retornar los tiempos de ejecución de BuscarConHeap y BuscarConOtro
-//		public string Consulta1(List<string> datos)
-//		{
-//			var collectedHeap = new List<Dato>();
-//			var collectedOtro = new List<Dato>();
-//
-//			var stopwatch = new System.Diagnostics.Stopwatch();
-//
-//			stopwatch.Start();
-//			BuscarConHeap(datos, 5, collectedHeap);
-//			stopwatch.Stop();
-//			long tiempoHeap = stopwatch.ElapsedMilliseconds;
-//
-//			stopwatch.Reset();
-//
-//			stopwatch.Start();
-//			BuscarConOtro(datos, 5, collectedOtro);
-//			stopwatch.Stop();
-//			long tiempoOtro = stopwatch.ElapsedMilliseconds;
-//
-//			return "Tiempo BuscarConHeap: {tiempoHeap} ms\nTiempo BuscarConOtro: {tiempoOtro} ms";
-//		}
-
+		
 		// Consulta2: Retornar el camino a la hoja más izquierda de la Heap
 		public string Consulta2(List<string> datos)
 		{
@@ -91,41 +69,7 @@ namespace WiW
 		// Consulta3: Retornar los datos de la Heap con niveles explícitos
 		public string Consulta3(List<string> datos)
 		{
-			var ocurrencias = new Dictionary<string, int>();
-			foreach (var dato in datos)
-			{
-				if (ocurrencias.ContainsKey(dato))
-				{
-					ocurrencias[dato]++;
-				}
-				else
-				{
-					ocurrencias[dato] = 1;
-				}
-			}
-
-			var heap = new List<Dato>();
-			foreach (var kvp in ocurrencias)
-			{
-				heap.Add(new Dato(kvp.Value, kvp.Key));
-			}
-
-			heap.Sort((a, b) => b.ocurrencia.CompareTo(a.ocurrencia));
-
-			var niveles = new List<string>();
-			int nivel = 0;
-			int count = 1;
-			for (int i = 0; i < heap.Count; i++)
-			{
-				if (i == count)
-				{
-					nivel++;
-					count = 2 * count + 1;
-				}
-				niveles.Add("Nivel {nivel}: {heap[i]}");
-			}
-
-			return string.Join("\n", niveles);
+			return "h";
 		}
 		
 		

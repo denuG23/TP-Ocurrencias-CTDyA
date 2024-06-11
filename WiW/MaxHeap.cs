@@ -17,7 +17,6 @@ namespace WiW
 	{
 		//implementar filtrado hacia abajo la ser maxheap recursivo
 		private Dato[] heap;
-		// array para almacenar los elementos del MinHeap
 		private int tamaño;
 
 		// constructor
@@ -61,32 +60,7 @@ namespace WiW
 			}
 		}
 		
-//		
-//				private void AjustarHeap(int indice)
-//				{
-//					int menor = indice;         // índice del menor valor como el índice dado
-//					int izquierdo = 2 * indice; // hijo izquierdo
-//					int derecho = 2 * indice + 1;   // hijo derecho
-//		
-//		
-//					if (izquierdo <= tamaño && heap[izquierdo] < heap[menor])
-//					{
-//						menor = izquierdo;
-//					}
-//		
-//		
-//					if (derecho <= tamaño && heap[derecho] < heap[menor])
-//					{
-//						menor = derecho;
-//					}
-//		
-//		
-//					if (menor != indice)
-//					{
-//						Intercambiar(indice, menor); // intercambio los valores
-//						AjustarHeap(menor);          // llamo a ajustarHeap
-//					}
-//				}
+
 
 		//metodo para intercambiar dos elementos en el heap
 		private void intercambiar(int i, int j)
@@ -109,9 +83,9 @@ namespace WiW
 		//metodo para devolver el elemento maximo de la maxheap
 		public Dato retornarMax()
 		{
-			Dato max = heap[1]; // el máximo es siempre el primer elemento
-			heap[1] = heap[tamaño]; // mover el último elemento a la raíz
-			tamaño--; // reducir el tamaño del heap
+			Dato max = heap[1]; 
+			heap[1] = heap[tamaño]; 
+			tamaño--; 
 			ajustarHeap(1); // reorganizar el heap desde la raíz
 			return max;
 
