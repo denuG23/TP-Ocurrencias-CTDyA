@@ -92,6 +92,7 @@ namespace WiW
 			while (true)
 			{
 				camino += heap.Heap[posicion].texto; // Agregar el valor del nodo actual al camino
+				camino += ":\n";
 
 				// Calcular el índice del hijo izquierdo
 				hijo_izq = 2 * posicion;
