@@ -7,6 +7,7 @@
  * To change this template use Tools | Options | Coding | Edit Standard Headers.
  */
 using System;
+using System.Collections.Generic;
 
 namespace WiW
 {
@@ -25,6 +26,16 @@ namespace WiW
 			tamaño = array.Length;
 			heap = new Dato[tamaño + 1]; // tamaño del heap comienza desde el índice 1
 			Array.Copy(array, 0, heap, 1, tamaño); // copio los elementos del array dado al array, comenzando desde el índice 1
+
+			ConstruirHeap();
+		}
+		
+		public MaxHeap(List<string> list)
+		{
+			tamaño = list.Count;
+			heap = new Dato[tamaño + 1]; // tamaño del heap comienza desde el índice 1
+			string[] array = list.ToArray();
+			Array.Copy(array, 0, heap, 1, tamaño);
 
 			ConstruirHeap();
 		}
@@ -90,6 +101,11 @@ namespace WiW
 			return max;
 
 		}
+		
+		public int Tamaño{get { return tamaño;}}
+		
+		public Dato[] Heap {get { return heap;}}
+	
 		private void reorganizarHeap(int indice)
 		{
 			ajustarHeap(indice);
